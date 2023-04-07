@@ -5,7 +5,7 @@ import "./stylesheets/textelement.css";
 import "./stylesheets/custim-components.css";
 import "./stylesheets/form-elements.css";
 import "./stylesheets/layout.css";
-import "./stylesheets/profile.css";
+import "./stylesheets/contact.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/common/Login";
 import Register from "./pages/common/Register";
@@ -18,9 +18,10 @@ import { useSelector } from "react-redux";
 import WriteExam from "./pages/user/WriteExam";
 import UserReports from "./pages/user/UserReports";
 import AdminReports from "./pages/admin/AdminReports";
-import Profile from "./pages/user/Profile";
+// import Profile from "./pages/user/Profile";
 import Users from "./pages/admin/Users";
 import Chart from "./pages/user/Chart";
+import Contact from "./pages/user/Contact";
 
 function App() {
   const { loading } = useSelector((state) => state.loader);
@@ -71,10 +72,10 @@ function App() {
             }
           />
           <Route
-            path="/user/profile"
+            path="/user/contact"
             element={
               <ProtectedRoute>
-                <Profile />
+                <Contact />
               </ProtectedRoute>
             }
           /> 
