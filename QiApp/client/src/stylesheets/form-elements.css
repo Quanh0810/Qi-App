@@ -1,0 +1,56 @@
+input{
+    height: 20px !important;
+    padding: 10px 20px !important;
+    border: 2px solid #a19c9c  !important;
+    width: 89%;
+    border-radius: 5px !important;
+    
+}
+
+/* tach select ra vi khac kich thuoc voi input */
+select{
+    height: 43.5px;
+    padding: 10px 20px;
+    border: 2px solid #a19c9c ;
+    width: 100%;
+    border-radius: 5px;
+    
+}
+
+.ant-form-item {
+    margin-bottom: 5px !important;
+}
+
+button {
+    padding: 0px 25px;
+    border-radius: 5px;
+    height: 40px !important;
+}
+
+.primary-contained-btn{
+    /* height: 40px; */
+    background-color: #151b2e;
+    color: white;
+    /* padding: 10px 20px; */
+    /* border-radius: 3px; */
+}
+
+.primary-outlined-btn{
+    /* height: 40px; */
+    background-color: white;
+    color: var(--primary);
+    border: 2px solid #151b2e;
+    /* font-size: 30px; */
+}
+
+.primary-outlined-btn-add {
+    margin-top: 14px;
+    height: 40px;
+    background-color: white;
+    color: var(--primary);
+    border: 2px solid #151b2e;
+}
+
+.form {
+    border-radius: 5px;
+}
