@@ -141,6 +141,7 @@ function Chart() {
             </option>
           ))}
       </select>
+      <br></br> <br></br>
       <ResponsiveContainer width="100%" aspect={3 / 1}>
         <AreaChart
           width={730}
@@ -167,6 +168,7 @@ function Chart() {
           <YAxis />
         </AreaChart>
       </ResponsiveContainer>
+      <br></br>
       <Table columns={columns} dataSource={fetchD} />
     </div>
   );
