@@ -41,8 +41,8 @@ function Contact() {
         <div className="row justify-content-center">
           <div className="col-md-10">
             <div className="wrapper">
-              <div className="row no-gutters">
-                <div className="col-md-6">
+              <div className="item-center">
+                <div className="col-6 item-child">
                   <div className="contact-wrap w-100 p-lg-5 p-4">
                     <h3 className="mb-4"></h3>
                     <br></br> <br></br> <br></br> 
@@ -92,7 +92,7 @@ function Contact() {
                           <div className="form-group">
                             <textarea
                               type="text"
-                              className="form-control"
+                              className="form-control w-100 text-a"
                               name="message"
                               placeholder="Message"
                               cols="30"
@@ -107,45 +107,40 @@ function Contact() {
                     </form>
                   </div>
                 </div>
-                <div className="col-md-6 d-flex align-items-stretch">
+                <div className="col-6 item-child d-flex justify-center">
                   <div className="info-wrap w-100 p-lg-5 p-4 img">
-                    <h3>Contact us</h3>
+                      <h3 className="title-contact">Contact us</h3>
                     <p className="mb-4">
                       We're open for any feedback or just to have a comment
                     </p>
-                    <div className="dbox w-100 d-flex align-items-start">
-                      <div className="icon d-flex align-items-center justify-content-center">
-                        <span ><i class="ri-mail-send-fill"></i></span>
-                      </div>
-                      <div className="text pl-3">
+                    <div className="dbox w-100 d-flex align-items-center">
+
+                        <i class="ri-mail-send-fill"></i>
+                      
                         <p>
-                          <span>Address:</span> 41 Pho Vong, Hai Ba Trung, Ha Noi
+                        Address: 41 Pho Vong, Hai Ba Trung, Ha Noi
                         </p>
-                      </div>
+                      
                     </div>
                     <div className="dbox w-100 d-flex align-items-center">
-                      <div className="icon d-flex align-items-center justify-content-center">
-                        <span><i class="ri-phone-fill"></i></span>
-                      </div>
-                      <div className="text pl-3">
+                      
+                        <i class="ri-phone-fill"></i>
+                     
                         <p>
-                          <span>Phone: </span>
-                          <a href="tel://123456789">+84869 036 124</a>
+                          <a href="tel://123456789">Phone: +84869 036 124</a>
                         </p>
-                      </div>
+                     
                     </div>
                     <div className="dbox w-100 d-flex align-items-center">
-                      <div className="icon d-flex align-items-center justify-content-center">
-                        <span><i class="ri-send-plane-fill"></i></span>
-                      </div>
-                      <div className="text pl-3">
+                     
+                       <i class="ri-send-plane-fill"></i>
+                      
                         <p>
-                          <span>Email: </span>
                           <a href="mailto:nqunhanh35@gmail.com">
-                            nqunhanh35@gmail.com
+                          Email: nqunhanh35@gmail.com
                           </a>
                         </p>
-                      </div>
+                      
                     </div>
 
                   </div>

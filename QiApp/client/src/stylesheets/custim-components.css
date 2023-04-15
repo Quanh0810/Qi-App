@@ -11,6 +11,12 @@
   margin: 10px 0;
 }
 
+.divider-sidebar{
+  width: 100%;
+  border-bottom: 1.4px solid rgb(188, 185, 185);
+  margin: 10px 0;
+}
+
 .loader-parent {
   position: absolute;
   inset: 0;

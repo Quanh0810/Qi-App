@@ -28,16 +28,7 @@ function PayLoader({ loading, price, setLoading,questionId }) {
       };
       document.body.appendChild(script);
     };
-    // if (!order || successPay) {
-    //   dispatch({ type: ORDER_PAY_RESET });
-    //   dispatch(getOrderDetails(orderId));
-    // } else if (!order.isPaid) {
-    //   if (!window.paypal) {
-    //     addPayPalScript();
-    //   } else {
-    //     setSdkReady(true);
-    //   }
-    // }
+    
     addPayPalScript();
   }, []);
 

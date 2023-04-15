@@ -4,7 +4,10 @@ import { useNavigate } from "react-router-dom";
 function Instruction({ examData, setView, startTimer }) {
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col items-center gap-5">
+    <div
+      className="flex flex-col items-center gap-5 mt"
+      
+    >
       <ul className="flex flex-col gap-1">
         <h1 className="text-2xl underline">Instructions</h1>
         <li>Exam must be completed in {examData.duration} secons.</li>

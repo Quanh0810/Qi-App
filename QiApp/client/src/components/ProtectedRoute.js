@@ -157,11 +157,25 @@ function ProtectedRoute({ children }) {
 
   return (
     <div className="layout">
-      <div className="flex gap-2 w-full h-full h-100">
-        <div className="sidebar">
+      <div className="w-full h-full h-100">
+        <div className="sidebar d-flex flex-column justify-content-center align-items-center">
           <div className="menu">
+            <div className="menu-item avatar d-flex flex-column align-items-center">
+              <img
+                src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png"
+                className="img-icon-avatar"
+                alt=""
+              />
+              <div className="des">
+                <span className="name-person">{user?.name}</span>
+                
+                
+              </div>
+              
+            </div>
             {menu.map((item, index) => {
               return (
+                
                 <div
                   className={`menu-item ${
                     getIsActiveOrNot(item.paths) && "active-menu-item"
@@ -176,9 +190,10 @@ function ProtectedRoute({ children }) {
             })}
           </div>
         </div>
+        
         <div className="body">
           <div className="header flex justify-between">
-            {!collapsed && (
+            {/* {!collapsed && (
               <i
                 className="ri-close-line"
                 onClick={() => setCollapsed(true)}
@@ -189,12 +204,12 @@ function ProtectedRoute({ children }) {
                 className="ri-menu-line"
                 onClick={() => setCollapsed(false)}
               ></i>
-            )}
-            <h1 className="text-2xl text-white">LEARN WITH QI</h1>
+            )} */}
+            <h1 className="text-xl text-white">LEARN WITH QI</h1>
             <div>
               <div className="flex gap-1 items-center">
                 {/* <i class="ri-user-line"></i> */}
-                <h1 className="text-md text-white">{user?.name}</h1>
+                {/* <h1 className="text-md text-white">{user?.name}</h1> */}
               </div>
               <span>Role : {user?.isAdmin ? "Admin" : "User"}</span>
             </div>

@@ -48,63 +48,49 @@ function Home() {
     setQuestionId(exam._id);
   }
 
+  const handleCheck = (status,exam) => {
+    if (status) {
+      navigate(`/user/write-exam/${exam._id}`)
+    } else {
+      handlePayment(exam)
+    }
+  }
+
   return (
     user && (
       <div>
         <PageTitle title={`Hi ${user?.name}, Welcome to Qi`} />
         <div className="divider"></div>
-        <Row gutter={[16, 16]}>
+        <h2 className="title-home">Bộ câu hỏi cơ bản</h2>
+        <Row className="d-flex align-item-center justify-content-center">
           {exams.map((exam) => (
-            <Col span={6}>
-              <div className="card-lg flex flex-col gap-1 p-2">
-                <h1 className="text-2xl">{exam?.name}</h1>
+            <Col span={6} className="m-3">
+              <div className="card-lg flex flex-col slide-img" onClick={() => navigate(`/user/write-exam/${exam._id}`)}>
+                <img src={exam.image} className="img-post" alt="" />
+                <h1 className="text-xl p-2  font-bold">{exam?.name}</h1>
 
-                <h1 className="text-md">Category : {exam.category}</h1>
-
-                <h1 className="text-md">Total Marks : {exam.totalMarks}</h1>
-                <h1 className="text-md">Passing Marks : {exam.passingMarks}</h1>
-                <h1 className="text-md">Duration : {exam.duration}</h1>
-
-                <button
-                  className="primary-outlined-btn"
-                  onClick={() => navigate(`/user/write-exam/${exam._id}`)}
-                >
-                  Start Exam
-                </button>
+                <h1 className="text-sm p-2  text-slate-300">{exam?.questions.length} Questions</h1>
               </div>
             </Col>
           ))}
         </Row>
-        <PageTitle title={`Premium`} className="mt-4" />
-        <p style={{ color: 'red', fontStyle: 'italic' }}>Please pay before use</p>
         <div className="divider"></div>
-        <Row gutter={[16, 16]}>
+        <h2 className="title-home my-3">Bộ câu hỏi trả phí</h2>
+        <Row className="d-flex align-item-center justify-content-center">
           {examsPremium.map((exam) => (
             <Col span={6} className="mb-3">
-              <div className="card-lg flex flex-col gap-1 p-2">
-                <h1 className="text-2xl">{exam?.name}</h1>
+              <div className="card-lg flex flex-col slide-img mr-ad" onClick={()=>handleCheck(exam?.isPay, exam)}>
+              <img src={exam.image} className="img-post" alt="" />
+                <h1 className="text-xl px-2 p-1 font-bold">{exam?.name}</h1>
 
-                <h1 className="text-md">Category : {exam.category}</h1>
-                <h1 className="text-md font-weight-bold" style={{ fontWeight: 'bold', color : 'red' }}>Price : {exam.price}$</h1>
-                <h1 className="text-md">Total Marks : {exam.totalMarks}</h1>
-                <h1 className="text-md">Passing Marks : {exam.passingMarks}</h1>
-                <h1 className="text-md">Duration : {exam.duration}</h1>
+                <h1 className="text-md px-2 font-weight-bold" style={{ fontWeight: 'bold', color : 'red' }}>Price : {exam.price}$</h1>
 
                 {
                   exam?.isPay ? (
-                    <button
-                  className="primary-outlined-btn"
-                  onClick={() => navigate(`/user/write-exam/${exam._id}`)}
-                >
-                  Start Exam
-                </button>
-                  ) : (
-                    <button
-                    className="danger-outlined-btn"
-                    onClick={() => handlePayment(exam)}
-                  >
-                    Please Pay
-                  </button>
+                    <h1 className="text-md px-2 p-2 font-sm text-slate-300">Đã thanh toán</h1>
+                    
+                    ): (
+                    <h1 className="text-md px-2 p-2 font-sm text-slate-300">Chưa thanh toán</h1>
                   )
                 }
               </div>

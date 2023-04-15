@@ -8,7 +8,18 @@ import PageTitle from "../../../components/PageTitle";
 import { Tabs, Checkbox } from "antd";
 import { HideLoading, ShowLoading } from "../../../redux/loaderSlice";
 import AddEditQuestion from "./AddEditQuestion";
+import { imageUpload } from "../../../util/util";
+
+import { Modal, Upload } from 'antd';
 // const {TabPane} = Tabs;
+
+const getBase64 = (file) =>
+  new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = (error) => reject(error);
+  });
 
 function AddEditExam() {
   const dispatch = useDispatch();
@@ -20,6 +31,55 @@ function AddEditExam() {
   const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
   const params = useParams();
   const [form] = Form.useForm();
+
+  const [image, setImage] = useState('');
+  const [previewOpen, setPreviewOpen] = useState(false);
+  const [previewImage, setPreviewImage] = useState('');
+  const [previewTitle, setPreviewTitle] = useState('');
+  const [fileList, setFileList] = useState([]);
+
+
+  const handleCancel = () => {
+    setPreviewOpen(false)
+    setFileList([]);
+  }
+  const handlePreview = async (file) => {
+    if (!file.url && !file.preview) {
+      file.preview = await getBase64(file.originFileObj);
+    }
+    setPreviewImage(file.url || file.preview);
+    setPreviewOpen(true);
+    setPreviewTitle(file.name || file.url.substring(file.url.lastIndexOf('/') + 1));
+  };
+  const handleChange = async({ fileList: newFileList }) => {
+    const newFile = newFileList.map((e) => {
+      return {
+        ...e,
+        status: 'done',
+
+      }
+    })
+  
+    const res = await imageUpload(newFile[0]?.originFileObj)
+      if (res) {
+        setFileList(newFile)
+        setImage(res);
+      }
+
+  }
+  const uploadButton = (
+    <div>
+      <i class="ri-file-add-fill"></i>
+      <div
+        style={{
+          marginTop: 8,
+        }}
+      >
+        Upload
+      </div>
+    </div>
+  );
+
   const onFinish = async (values) => {
     console.log(values);
     try {
@@ -30,9 +90,10 @@ function AddEditExam() {
         response = await editExamById({
           ...values,
           examId: params.id,
+          image: image
         });
       } else {
-        response = await addExam({...values,isPay: false});
+        response = await addExam({...values,isPay: false, image: image});
       }
 
       if (response.success) {
@@ -57,6 +118,17 @@ function AddEditExam() {
       dispatch(HideLoading());
       if (response.success) {
         setExamData(response.data);
+        if (response?.data?.image) {
+          setFileList([
+            {
+              uid: '-1',
+              name: 'image.png',
+              status: 'done',
+              url: response?.data?.image,
+            },
+          ])
+          setImage(response?.data?.image)
+        }
       } else {
         message.error(response.message);
       }
@@ -155,6 +227,12 @@ function AddEditExam() {
     }
   };
 
+  const handleRemove = (file, fileList) => {
+    setFileList([
+    ])
+    setImage("");
+  }
+
   return (
     <div>
       <PageTitle title={params.id ? "Edit Exam" : "Add Exam"}></PageTitle>
@@ -176,7 +254,7 @@ function AddEditExam() {
                 </Col>
                 <Col span={8}>
                   <Form.Item label="Category" name="category">
-                    <select name="" id="">
+                    <select>
                       <option value="">Select Category</option>
                       <option value="Javascript">Javascript</option>
                       <option value="React">React</option>
@@ -217,6 +295,22 @@ function AddEditExam() {
                   >
                   <input type="number" ></input>
                   </Form.Item>
+                </Col>
+                <Col span={8}>
+                <Upload
+                    action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                    listType="picture-circle"
+                    fileList={fileList}
+                    maxCount={1}
+                    onRemove={handleRemove}
+                    onPreview={handlePreview}
+                    onChange={handleChange}
+                  >
+                    {fileList.length >= 1 ? null : uploadButton}
+                  </Upload>
+                  <Modal open={previewOpen} title={previewTitle} footer={null} onCancel={handleCancel}>
+                    <img alt="example" style={{ width: '100%' }} src={previewImage} />
+                  </Modal>
                 </Col>
               </Row>
               <div className="flex justify-end gap-2">

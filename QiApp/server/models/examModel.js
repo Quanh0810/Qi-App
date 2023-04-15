@@ -31,7 +31,12 @@ const examSchema = new mongoose.Schema(
     premium: { type: Boolean, default: false },
     price: { type: String },
     isPay: {
-      type: Boolean, default: false}
+      type: Boolean, default: false
+    },
+    image: {
+      type: String,
+      
+    }
   },
   { 
     timestamps: true,

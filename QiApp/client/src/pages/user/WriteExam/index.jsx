@@ -128,7 +128,7 @@ function WriteExam() {
         )}
 
         {view === "questions" && (
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 mt-btn">
             <div className="flex justify-between">
               <h1 className="text-2xl">
                 {selectedQuestionIndex + 1} :{" "}
@@ -140,7 +140,7 @@ function WriteExam() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 mt-btn">
               {Object.keys(questions[selectedQuestionIndex].options).map(
                 (option, index) => {
                   return (
@@ -171,7 +171,7 @@ function WriteExam() {
             <div className="flex justify-between">
               {selectedQuestionIndex > 0 && (
                 <button
-                  className="primary-outlined-btn"
+                  className="primary-outlined-btn mt-btn "
                   onClick={() => {
                     setSelectedQuestionIndex(selectedQuestionIndex - 1);
                   }}
@@ -182,7 +182,7 @@ function WriteExam() {
 
               {selectedQuestionIndex < questions.length - 1 && (
                 <button
-                  className="primary-contained-btn"
+                  className="primary-contained-btn mt-btn "
                   onClick={() => {
                     setSelectedQuestionIndex(selectedQuestionIndex + 1);
                   }}
@@ -193,7 +193,7 @@ function WriteExam() {
 
               {selectedQuestionIndex === questions.length - 1 && (
                 <button
-                  className="primary-contained-btn"
+                  className="primary-contained-btn mt-btn "
                   onClick={() => {
                     clearInterval(intervalId);
                     setTimeUp(true);
@@ -208,7 +208,7 @@ function WriteExam() {
 
         {view === "result" && (
           <div className="flex flex items-center mt-2 justify-center result">
-            <div className="flex flex-col gap-2 ">
+            <div className="flex flex-col gap-2">
               <h1 className="text-2xl">RESULT</h1>
               <div className="divider"></div>
               <div className="marks">
@@ -226,7 +226,7 @@ function WriteExam() {
 
                 <div className="flex gap-2 mt-2">
                   <button
-                    className="primary-outlined-btn"
+                    className="primary-outlined-btn mt-btn "
                     onClick={() => {
                       setView("instructions");
                       setSelectedQuestionIndex(0);
@@ -237,7 +237,7 @@ function WriteExam() {
                     Retake Exam
                   </button>
                   <button
-                    className="primary-contained-btn"
+                    className="primary-contained-btn mt-btn "
                     onClick={() => {
                       setView("review");
                     }}
@@ -299,7 +299,7 @@ function WriteExam() {
 
             <div className="flex justify-center gap-2">
               <button
-                className="primary-outlined-btn"
+                className="primary-outlined-btn mt-btn-2"
                 onClick={() => {
                   navigate("/");
                 }}
@@ -307,7 +307,7 @@ function WriteExam() {
                 Close
               </button>
               <button
-                className="primary-contained-btn"
+                className="primary-contained-btn mt-btn-2 "
                 onClick={() => {
                   setView("instructions");
                   setSelectedQuestionIndex(0);
