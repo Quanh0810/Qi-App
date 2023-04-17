@@ -48,7 +48,7 @@ function Register() {
               >
                 Register
               </button>
-              <Link to="/login">
+              <Link to="/login" className="underline">
                 Already a member? Login
               </Link>
             </div>

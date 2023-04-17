@@ -5,7 +5,7 @@
 }
 
 .sidebar {
-  background-color: #374254;
+  background-color: #2F2235;
   padding: 10px;
   border-radius: 0px;
   height: 100%;
@@ -39,7 +39,7 @@
 }
 
 .header {
-  background-color:  #374254;
+  background-color:  #2F2235;
   color: white !important;
   width: 100%;
   padding: 10px;
@@ -90,4 +90,12 @@
 
 .des .logout i {
   font-size: 12px;
+}
+
+.content {
+  width: 95%;
+  justify-content: center;
+  /* text-align: center; */
+  align-items: center;
+  margin-left: 25px;
 }

@@ -257,9 +257,12 @@ function AddEditExam() {
                     <select>
                       <option value="">Select Category</option>
                       <option value="Javascript">Javascript</option>
-                      <option value="React">React</option>
-                      <option value="Node">Node</option>
+                      <option value="HTML">HTML</option>
+                      <option value="CSS">CSS</option>
                       <option value="MongoDB">MongoDB</option>
+                      <option value="Java">Java</option>
+                      <option value="c++">C++</option>
+                      <option value="Python">Python</option>
                     </select>
                   </Form.Item>
                 </Col>

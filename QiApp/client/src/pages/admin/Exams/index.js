@@ -106,7 +106,7 @@ function Exams() {
   return (
     <div>
       <div className="flex justify-between mt-1 items-end ">
-        <PageTitle title="Exams"></PageTitle>
+        <PageTitle title="List of Exams"></PageTitle>
 
         <button
           className="primary-outlined-btn-add flex items-center"

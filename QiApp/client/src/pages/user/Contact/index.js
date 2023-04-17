@@ -118,7 +118,7 @@ function Contact() {
                         <i class="ri-mail-send-fill"></i>
                       
                         <p>
-                        Address: 41 Pho Vong, Hai Ba Trung, Ha Noi
+                        Address: 41 Pho Vong, Hai Ba Trung
                         </p>
                       
                     </div>
