@@ -23,9 +23,9 @@
 }
 
 .bg-success{
-    background-color: var(--success);
+    background-color: #91a9bf!important
 }
 
 .bg-error{
-    background-color: var(--warning);
+    background-color: #f0b7b7;
 }
