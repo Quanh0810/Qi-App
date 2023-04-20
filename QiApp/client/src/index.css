@@ -1,70 +1,77 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,400&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,400&display=swap");
 
 * {
-    font-family: 'Poppins', sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
 }
 
-.item-center{
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
+.item-center {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
 }
 
-.item-child{
-    width: 50%;
+.item-child {
+  width: 50%;
 }
 
-.dbox{
-    display: flex;
-    align-items: flex-end;
-
+.dbox {
+  display: flex;
+  align-items: flex-end;
 }
 
-.title-contact{
-    margin-bottom: 50px;
+.title-contact {
+  margin-bottom: 50px;
 }
 
-.text-a{
-    padding: 10px 20px!important;
+.text-a {
+  padding: 10px 20px !important;
 }
 
-.font-bold{
-    font-weight: bold;
+.font-bold {
+  font-weight: bold;
 }
-.text-slate-300{
-    color: rgb(148 163 184);
-}
-
-.slide-img{
-    /* height: 340px; */
-    width: 230px;
-    box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    border: none;
-    overflow: hidden;
+.text-slate-300 {
+  color: rgb(148 163 184);
 }
 
-.img-post{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+.slide-img {
+  /* height: 340px; */
+  width: 230px;
+  box-shadow: 1px 1px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: none;
+  overflow: hidden;
 }
 
-.slide-img:hover{
-        transform: scale(1.025);
-        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+.img-post {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
-.title-home{
-    font-size: 22px;
-    font-weight: bold;
-    background-color: #BFC3BA;
-    padding: 5px 20px;
-    border-radius: 5px;
+.slide-img:hover {
+  transform: scale(1.025);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.title-home {
+  font-size: 22px;
+  font-weight: bold;
+  background-color: #bfc3ba;
+  padding: 5px 20px;
+  border-radius: 5px;
 }
 
 /* .css-dev-only-do-not-override-1me4733{
     flex: 0 0 25%
 } */
 
+/* .paypal-button-row.paypal-button-number-1.paypal-button-layout-vertical.paypal-button-shape-rect.paypal-button-number-multiple.paypal-button-env-sandbox.paypal-button-color-black{
+    display: none;
+} */
+
+.PayPalButton
+  .paypal-buttons-context-outer-container
+  .paypal-buttons-context-iframe {
+  display: none !important; 
+}

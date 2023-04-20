@@ -259,7 +259,7 @@ function AddEditExam() {
                       <option value="Javascript">Javascript</option>
                       <option value="HTML">HTML</option>
                       <option value="CSS">CSS</option>
-                      <option value="MongoDB">MongoDB</option>
+                      <option value="NoSQL">NoSQL Database</option>
                       <option value="Java">Java</option>
                       <option value="c++">C++</option>
                       <option value="Python">Python</option>

@@ -34,7 +34,7 @@ function PayLoader({ loading, price, setLoading,questionId }) {
 
   return (
     <div className="loader-parent" onClick={() => setLoading(false)}>
-        {sdkReady && ( <PayPalButton amount={price} onSuccess={successPaymentHandler} />)}
+        {sdkReady && ( <PayPalButton disabled={true} amount={price} onSuccess={successPaymentHandler} tagline={false}/>)}
     </div>
   );
 }
