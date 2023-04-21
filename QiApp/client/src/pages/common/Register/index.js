@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { registerUser } from "../../../apicalls/users";
 import { useDispatch } from "react-redux";
 import { HideLoading, ShowLoading } from "../../../redux/loaderSlice";
+import Logo from "../../../assets/images/quiz-logo.png"
 
 function Register() {
   const dispatch = useDispatch();
@@ -25,7 +26,9 @@ function Register() {
     }
   }
   return (
-    <div className="flex justify-center items-center h-screen w-screen bg-primary">
+    <div className="flex justify-center items-center h-screen w-screen bg-primary" style={{
+      position: "relative"
+    }}>
       <div className="card w-400 p-3 bg-white form">
         <div className="flex flex-col">
           <h1 className="text-2xl">Qi - REGISTER <i class="ri-user-add-line"></i></h1>
@@ -54,6 +57,21 @@ function Register() {
             </div>
           </Form>
         </div>
+      </div>
+      <div className="absolute" style={{
+        position: "absolute",
+        top: "20px",
+        left: "20px"
+      }}>
+        <img src={Logo} style={{
+          width:"60px",
+          height:"60px",
+          margin: "5px 15px"
+        }}/>
+        <div style={{
+          color:"white",
+          margin: "0 20px"
+        }}>QiQuiz</div>
       </div>
     </div>
   );

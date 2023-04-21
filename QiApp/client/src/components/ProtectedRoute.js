@@ -51,7 +51,7 @@ function ProtectedRoute({ children }) {
       onClick: () => navigate("/user/contact"),
     },
     {
-      title: "Chart",
+      title: "Statistics",
       paths: ["/user/chart"],
       icon: <i class="ri-line-chart-fill"></i>,
       onClick: () => navigate("/user/chart"),

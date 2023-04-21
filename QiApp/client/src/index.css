@@ -70,8 +70,12 @@
     display: none;
 } */
 
-.PayPalButton
+/* .PayPalButton
   .paypal-buttons-context-outer-container
   .paypal-buttons-context-iframe {
   display: none !important; 
-}
+} */
+
+/* .paypal-button-row.paypal-button-number-1.paypal-button-layout-vertical.paypal-button-shape-rect.paypal-button-number-multiple.paypal-button-env-sandbox.paypal-button-color-black.paypal-button-text-color-white.paypal-logo-color-white {
+  display: none !important;
+} */

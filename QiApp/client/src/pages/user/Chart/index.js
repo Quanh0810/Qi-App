@@ -129,7 +129,7 @@ function Chart() {
   //     console.log('params', pagination, filters, sorter, extra);
   return (
     <div>
-      <PageTitle title="Chart"></PageTitle>
+      <PageTitle title="Statistics"></PageTitle>
       <div className="divider"></div>
 
       <select onChange={(e) => setItem(e.target.value)}>
