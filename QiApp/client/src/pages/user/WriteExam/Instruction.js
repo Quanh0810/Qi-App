@@ -10,7 +10,7 @@ function Instruction({ examData, setView, startTimer }) {
     >
       <ul className="flex flex-col gap-1">
         <h1 className="text-2xl underline">Instructions</h1>
-        <li>Exam must be completed in {examData.duration} secons.</li>
+        <li>Exam must be completed in {examData.duration} seconds.</li>
         <li>
           Exam will be submitted automatically after {examData.duration}{" "}
           seconds.
