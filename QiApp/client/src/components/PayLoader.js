@@ -7,6 +7,7 @@ import { message } from "antd";
 function PayLoader({ loading, price, setLoading, questionId }) {
   const [sdkReady, setSdkReady] = useState(false);
 
+  // xử lý khi thanh toán thành công
   const successPaymentHandler = async (paymentResult) => {
     const res = await axios.post("/api/exams/edit-exam-by-id", {
       examId: questionId,
@@ -19,14 +20,18 @@ function PayLoader({ loading, price, setLoading, questionId }) {
   };
 
   window.scroll(0, 0);
+
+  // tích hợp thanh toán
   useEffect(() => {
     const addPayPalScript = async () => {
       const { data: clientId } = await axios.get("/api/config/paypal");
+      // thiết lập thuộc tính để tải mã js
       const script = document.createElement("script");
       script.type = "text/javascript";
       // script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`;
       script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}&disable-funding=card`;
       script.async = true;
+      // sự kiện onload khi mã được tải xong
       script.onload = () => {
         setSdkReady(true);
       };

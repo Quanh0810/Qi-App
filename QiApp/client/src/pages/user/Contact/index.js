@@ -13,18 +13,22 @@ function Contact() {
     message: "",
   });
 
+
   const { name, email, subject, message } = state;
   const handleSubmit = (e) => {
     e.preventDefault();
+      // Kiểm tra các trường khi để trống
     if (!name || !email || !subject || !message) {
       toast.error("Please provide value in each input field");
     } else {
+      // Đã gửi thành công
       // firebaseDB.child("contacts").push(state);
       setState({ name: "", email: "", subject: "", message: "" });
       toast.success("Form Submitted Successfully");
     }
   };
 
+//  thay đổi giá trị của một trường nhập liệu và cập nhật trạng thái
   const handleInputChange = (e) => {
     let { name, value } = e.target;
     setState({ ...state, [name]: value });

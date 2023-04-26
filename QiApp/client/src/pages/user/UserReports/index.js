@@ -42,6 +42,7 @@ function UserReports() {
       dataIndex: "verdict",
       render: (text, record) => <>{record.result.verdict}</>,
     },
+    
   ];
 
   const getData = async () => {

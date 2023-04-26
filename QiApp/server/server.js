@@ -12,6 +12,7 @@ app.use("/api/users", usersRoute);
 app.use("/api/exams", examsRoute);
 app.use("/api/reports", reportsRoute);
 app.get("/api/config/paypal", (req, res) => {
+  // id khách hàng
  res.send('AaiOR0UuKrkTaDWKtlae81PRr3enX2RBcxrcpX39uHH2VJy1ntxfIu3LuU8wOgey8oHm4SzH3cwqM5N5');
 }); 
 const port = process.env.PORT || 5000;

@@ -38,11 +38,13 @@ function AddEditExam() {
   const [previewTitle, setPreviewTitle] = useState('');
   const [fileList, setFileList] = useState([]);
 
-
+// thoát chế độ xem
   const handleCancel = () => {
     setPreviewOpen(false)
-    setFileList([]);
+    // setFileList([]);
   }
+
+  // xem ảnh
   const handlePreview = async (file) => {
     if (!file.url && !file.preview) {
       file.preview = await getBase64(file.originFileObj);
@@ -67,6 +69,8 @@ function AddEditExam() {
       }
 
   }
+
+  // nút up ảnh
   const uploadButton = (
     <div>
       <i class="ri-file-add-fill"></i>
@@ -80,6 +84,7 @@ function AddEditExam() {
     </div>
   );
 
+  // khi tạo hoặc chỉnh sửa bài thi xong
   const onFinish = async (values) => {
     console.log(values);
     try {
@@ -95,7 +100,7 @@ function AddEditExam() {
       } else {
         response = await addExam({...values,isPay: false, image: image});
       }
-
+// chuyển đến giao diện dsach đề thi khi thành công
       if (response.success) {
         message.success(response.message);
         navigate("/admin/exams");
@@ -164,6 +169,7 @@ function AddEditExam() {
     }
   }, []);
 
+  // dsach câu hỏi
   const questionsColumns = [
     {
       title: "Question",
@@ -214,6 +220,7 @@ function AddEditExam() {
     },
   ];
 
+  // Kiểm tra xem đã check chưa và tbao lỗi nếu chưa nhập price
   const handleCheckboxChange = (event) => {
     setIsCheckboxChecked(event.target.checked);
     const errors = form.getFieldError('price');
@@ -227,6 +234,7 @@ function AddEditExam() {
     }
   };
 
+  // xóa ảnh
   const handleRemove = (file, fileList) => {
     setFileList([
     ])

@@ -62,7 +62,7 @@ function Exams() {
       dataIndex: "name",
     },
     {
-      title: "Duration",
+      title: "Thời lượng",
       dataIndex: "duration",
     },
     {

@@ -14,6 +14,7 @@ import {
   YAxis,
 } from "recharts";
 
+// bảng xếp hạng
 function Chart() {
   const columns = [
     {
@@ -24,7 +25,7 @@ function Chart() {
       title: "Score",
       dataIndex: "score",
       sorter: {
-        compare: (a, b) => a.score - b.score,
+        compare: (a, b) => a.score.split('/')[0] - b.score.split('/')[0],
         multiple: 2,
       },
     },
@@ -85,6 +86,7 @@ function Chart() {
     });
   }, [item]);
 
+  // dữ liệu trả về theo tháng
   const convertStat = (stat) => {
     const months = [
       "Jan",
@@ -114,7 +116,11 @@ function Chart() {
     }
   };
 
+
+  // bảng xếp hạng render ra dữ liệu
   const renderData = (array) => {
+    // const scoreOfExam = item?.result?.correctAnswer?.length;
+    // console.log(scoreOfExam);
     return array.map((item, index) => {
       return {
         key: index + 1,

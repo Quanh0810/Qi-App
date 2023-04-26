@@ -17,6 +17,7 @@ function Users() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  // hiển thị ra user
   const getUsers = async () => {
     try {
       dispatch(ShowLoading());
@@ -42,7 +43,7 @@ function Users() {
     }
   };
 
-  // loi khong xoa duoc user
+//  xóa user
   const deleteUser = async (userName) => {
     try {
       dispatch(ShowLoading());

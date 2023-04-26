@@ -13,6 +13,7 @@ function AddEditQuestion({
   setSelectedQuestion
 }) {
   const dispatch = useDispatch();
+  // bắt buộc nhập các trường câu hỏi
   const onFinish = async (values) => {
     try {
       dispatch(ShowLoading());

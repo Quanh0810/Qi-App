@@ -22,6 +22,7 @@ function WriteExam() {
   const [intervalId, setIntervalId] = useState(null);
   const { user } = useSelector((state) => state.users);
 
+  // Lấy dữ liệu exam
   const getExamData = async () => {
     try {
       dispatch(ShowLoading());
@@ -42,6 +43,8 @@ function WriteExam() {
     }
   };
 
+
+  // Tính toán kết quả
   const calculateResult = async () => {
     try {
       console.log(secondsLeft);
@@ -61,6 +64,7 @@ function WriteExam() {
         verdict = "Fail";
       }
 
+      // Kết quả hiện ra
       const tempResult = {
         correctAnswer,
         wrongAnswer,
@@ -86,6 +90,7 @@ function WriteExam() {
     }
   };
 
+  // Thời gian làm bài
   const startTimer = () => {
     let totalSeconds = examData.duration;
     const intervalId = setInterval(() => {
@@ -99,6 +104,7 @@ function WriteExam() {
     setIntervalId(intervalId);
   };
 
+  //  dừng bộ đếm thời gian và hiển thị kết quả khi hết giờ
   useEffect(() => {
     if (timeUp && view === "questions") {
       clearInterval(intervalId);

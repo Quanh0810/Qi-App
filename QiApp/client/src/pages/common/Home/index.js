@@ -17,6 +17,7 @@ function Home() {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.users);
 
+  // lấy dữ liệu exam 
   const getExams = async () => {
     try {
       dispatch(ShowLoading());
@@ -42,12 +43,14 @@ function Home() {
     getExams();
   }, [sdk]);
 
+  // nếu chưa thanh toán hiển thị ra giá
   const handlePayment = (exam) => {
     setSdk(true);
     setPrice(exam.price);
     setQuestionId(exam._id);
   }
 
+  // kiểm tra xem bài đó đã trả tiền hay chưa
   const handleCheck = (status,exam) => {
     if (status) {
       navigate(`/user/write-exam/${exam._id}`)

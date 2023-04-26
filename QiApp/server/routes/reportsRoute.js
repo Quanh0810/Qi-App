@@ -84,6 +84,7 @@ router.post("/get-all-reports-by-user", authMiddleware, async (req, res) => {
     const reports = await Report.find({ user: req.body.userId })
       .populate("exam")
       .populate("user")
+      // dữ liệu trả về giảm dần theo ngày
       .sort({ createdAt: -1 });
     res.send({
       message: "Attempts fetched successfully",
@@ -118,6 +119,9 @@ router.post("/get-all-reports-by-user", authMiddleware, async (req, res) => {
 //     });
 //   }
 // });
+
+
+// get all report by report
 router.post("/get-all-reports-by-report", authMiddleware, async (req, res) => {
   try {
     const reports = await Report.find({ exam: req.body.reportId })
